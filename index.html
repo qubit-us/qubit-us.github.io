@@ -70,7 +70,7 @@
          bottom: 2rem;
          right: 2rem;
          text-wrap: balance;
-         
+
          color: #333;
          z-index: 1;
       }
@@ -103,6 +103,21 @@
          line-height: 1.25;
          font-size: 2rem;
       } */
+
+
+      canvas {
+         width: 100vw;
+         height: 100vh;
+         position: fixed;
+         top: 0;
+         left: 0;
+
+         z-index: -1;
+         /* z-index: 0; */
+         pointer-events: all;
+         /* opacity: .5; */
+         background-color: transparent;
+      }
 
       .landing__button {
          margin-top: 2rem;
@@ -148,6 +163,7 @@
          pointer-events: none;
 
          padding: 0 2rem;
+
          display: grid;
          grid-template-columns: 1fr 1fr 1fr;
       }
@@ -159,30 +175,19 @@
          aspect-ratio: 1/1;
       }
 
-      .item__a {
-         grid-column: 1;
-      }
-
-      .item__b {
-         grid-column: 3;
-      }
-
-      .item__c {
-         grid-column: 2;
-         grid-row: 2;
-      }
-
-      .item__d {
-         grid-column: 1;
-         grid-row: 3;
-      }
-
-      .item__e {
-         grid-column: 3;
-         grid-row: 3;
+      .empty__box {
+         aspect-ratio: 1/1;
       }
 
       @media screen and (max-width: 600px) {
+         canvas {
+            pointer-events: none;
+         }
+
+         .landing__page {
+            pointer-events: all;
+         }
+
          .landing__title div {
             font-size: 2.5rem;
          }
@@ -216,22 +221,17 @@
          .tip {
             display: none;
          }
-      }
-   </style>
 
-   <style>
-      canvas {
-         width: 100vw;
-         height: 100vh;
-         position: fixed;
-         top: 0;
-         left: 0;
+         .overlay {
+            display: flex;
+            flex-direction: column;
+            pointer-events: all;
+            padding: 0;
+         }
 
-         z-index: -1;
-         /* z-index: 0; */
-         pointer-events: all;
-         /* opacity: .5; */
-         background-color: transparent;
+         .empty__box {
+            display: none;
+         }
       }
    </style>
 </head>
@@ -280,11 +280,17 @@
    </div>
 
    <div class="overlay">
-      <div class="grid__item item__a"></div>
-      <div class="grid__item item__b"></div>
-      <div class="grid__item item__c"></div>
-      <div class="grid__item item__d"></div>
-      <div class="grid__item item__e"></div>
+      <div class="grid__item"></div>
+      <div class="empty__box"></div>
+      <div class="grid__item"></div>
+
+      <div class="empty__box"></div>
+      <div class="grid__item"></div>
+      <div class="empty__box"></div>
+
+      <div class="grid__item"></div>
+      <div class="empty__box"></div>
+      <div class="grid__item"></div>
    </div>
 
    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
