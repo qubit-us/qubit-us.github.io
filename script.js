@@ -1,134 +1,299 @@
+// Form data management
+const formData = {
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+};
 
-document.addEventListener('DOMContentLoaded', () => {
-   // Scroll animation
-   const revealElements = document.querySelectorAll('.reveal, .reveal-text');
-   const header = document.querySelector('.header');
+// DOM elements
+const form = document.getElementById('contactForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const companyInput = document.getElementById('company');
+const messageInput = document.getElementById('message');
+const sendButton = document.getElementById('sendButton');
 
-   // Mobile navigation toggle
-   const navToggle = document.getElementById('navToggle');
-   const navMenu = document.querySelector('.nav-menu');
+// Navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                const target = document.querySelector(href);
+                if (target) {
+                    // Remove active class from all links
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Update active navigation link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY + 100;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    });
+    
+    // Set initial active state
+    const currentHash = window.location.hash || '#home';
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentHash) {
+            link.classList.add('active');
+        }
+    });
+});
 
-   // Testimonial slider
-   const testimonialTrack = document.getElementById('testimonialTrack');
-   const dots = document.querySelectorAll('.dot');
-   let currentTestimonial = 0;
+// Form functionality
+if (nameInput && emailInput && companyInput && messageInput && sendButton) {
+    // Update form data when inputs change
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        formData[name] = value;
+    }
 
-   // Contact form
-   const contactForm = document.getElementById('contactForm');
+    // Add event listeners to form inputs
+    nameInput.addEventListener('input', handleInputChange);
+    emailInput.addEventListener('input', handleInputChange);
+    companyInput.addEventListener('input', handleInputChange);
+    messageInput.addEventListener('input', handleInputChange);
 
-   // Smooth scrolling for navigation links
-   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-         e.preventDefault();
+    // Handle form submission
+    function handleSubmit(event) {
+        event.preventDefault();
+        
+        // Get current form values
+        const currentFormData = {
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            company: companyInput.value.trim(),
+            message: messageInput.value.trim()
+        };
+        
+        // Basic validation
+        if (!currentFormData.name || !currentFormData.email || !currentFormData.message) {
+            showToast('Please fill in all required fields.', 'error');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(currentFormData.email)) {
+            showToast('Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Create mailto URL
+        const subject = encodeURIComponent('New Inquiry');
+        const body = encodeURIComponent(
+            `Name: ${currentFormData.name}\n` +
+            `Email: ${currentFormData.email}\n` +
+            `Company: ${currentFormData.company}\n` +
+            `Message: ${currentFormData.message}`
+        );
+        
+        const mailtoUrl = `mailto:qubit.usa@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Open email client
+        window.open(mailtoUrl);
+        
+        // Show success message
+        showToast('Message sent! We\'ll get back to you within 24 hours.', 'success');
+        
+        // Reset form
+        resetForm();
+    }
 
-         if (navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-         }
+    // Reset form function
+    function resetForm() {
+        nameInput.value = '';
+        emailInput.value = '';
+        companyInput.value = '';
+        messageInput.value = '';
+        
+        // Reset form data object
+        formData.name = '';
+        formData.email = '';
+        formData.company = '';
+        formData.message = '';
+    }
 
-         const targetId = this.getAttribute('href');
-         if (targetId === '#') return;
+    // Add click event listener to send button
+    sendButton.addEventListener('click', handleSubmit);
 
-         const targetElement = document.querySelector(targetId);
-         if (targetElement) {
-            window.scrollTo({
-               top: targetElement.offsetTop - 80,
-               behavior: 'smooth'
-            });
-         }
-      });
-   });
+    // Add form submission handler
+    form.addEventListener('submit', handleSubmit);
+}
 
-   // Mobile menu toggle
-   navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-   });
+// Toast notification function
+function showToast(message, type = 'info') {
+    // Remove existing toast if any
+    const existingToast = document.querySelector('.toast');
+    if (existingToast) {
+        existingToast.remove();
+    }
+    
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    
+    // Toast styles
+    toast.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        font-weight: 500;
+        max-width: 300px;
+        animation: slideInRight 0.3s ease-out;
+    `;
+    
+    // Add to document
+    document.body.appendChild(toast);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        toast.style.animation = 'slideOutRight 0.3s ease-out';
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 300);
+    }, 5000);
+}
 
-   // Reveal elements on scroll
-   function revealOnScroll() {
-      const windowHeight = window.innerHeight;
+// Add toast animations to document if not already present
+if (!document.querySelector('#toast-styles')) {
+    const style = document.createElement('style');
+    style.id = 'toast-styles';
+    style.textContent = `
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
 
-      revealElements.forEach(element => {
-         const elementTop = element.getBoundingClientRect().top;
+// Add focus styles for accessibility
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('.form-input, .form-textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('focused');
+        });
+    });
+});
 
-         if (elementTop < windowHeight - 100) {
-            element.classList.add('active');
-         }
-      });
+// Add keyboard navigation support
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && e.ctrlKey && form) {
+        // Ctrl+Enter to submit form
+        const submitEvent = new Event('submit');
+        form.dispatchEvent(submitEvent);
+    }
+});
 
-      // Header background change on scroll
-      if (window.scrollY > 50) {
-         header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-         header.style.padding = '1.5rem 0';
-      } else {
-         header.style.boxShadow = 'none';
-         header.style.padding = '2rem 0';
-      }
-   }
+// Add form validation feedback styles
+function addValidationStyles() {
+    if (!document.querySelector('#validation-styles')) {
+        const style = document.createElement('style');
+        style.id = 'validation-styles';
+        style.textContent = `
+            .form-group.focused .form-label {
+                color: #cd0102;
+            }
+            
+            .form-input:invalid,
+            .form-textarea:invalid {
+                border-color: #ef4444;
+            }
+            
+            .form-input:valid,
+            .form-textarea:valid {
+                border-color: #10b981;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
 
-   // Initialize reveal on page load
-   revealOnScroll();
+// Initialize validation styles
+addValidationStyles();
 
-   // Testimonial slider functionality
-   function showTestimonial(index) {
-      testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
-      currentTestimonial = index;
+// Initialize page
+document.addEventListener('DOMContentLoaded', function() {
+    // Add scroll reveal animations for service cards
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-      // Update active dot
-      dots.forEach((dot, i) => {
-         dot.classList.toggle('active', i === index);
-      });
-   }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationDelay = '0ms';
+                entry.target.classList.add('animate-visible');
+            }
+        });
+    }, observerOptions);
 
-   // Add click event to dots
-   dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-         showTestimonial(index);
-      });
-   });
-
-   // Auto slide testimonials
-   setInterval(() => {
-      const nextSlide = (currentTestimonial + 1) % dots.length;
-      showTestimonial(nextSlide);
-   }, 6000);
-
-   // Form submission
-   if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-         e.preventDefault();
-
-         const formData = {
-            name: contactForm.name.value,
-            email: contactForm.email.value,
-            service: contactForm.service.value,
-            message: contactForm.message.value
-         };
-
-         // This would normally send to a server, but we'll just log it
-         console.log('Form submitted:', formData);
-
-         // Show success message
-         const successMessage = document.createElement('div');
-         successMessage.className = 'form-success';
-         successMessage.innerHTML = `
-        <div class="success-icon">✓</div>
-        <h3>Message Sent!</h3>
-        <p>Thanks for reaching out. We'll be in touch shortly.</p>
-      `;
-
-         contactForm.innerHTML = '';
-         contactForm.appendChild(successMessage);
-
-         // Reset form after delay in real application
-         // setTimeout(() => contactForm.reset(), 5000);
-      });
-   }
-
-   // Add scroll event listener
-   window.addEventListener('scroll', revealOnScroll);
-
-   // Handle resize events
-   window.addEventListener('resize', revealOnScroll);
+    // Observe service cards for animation
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 100}ms`;
+        observer.observe(card);
+    });
 });
