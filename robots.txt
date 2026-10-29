@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://qubit-us.com/sitemap.xml

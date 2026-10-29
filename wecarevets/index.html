@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeCareVets - Serving those who served</title>
+    <meta name="description" content="WeCareVets is an upcoming initiative connecting veterans and their families with career opportunities, practical resources, and community support.">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <meta name="view-transition" content="same-origin">
+
+
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .custom-focus-ring:focus-visible {
+            outline: 2px solid #D32F2F;
+            outline-offset: 4px;
+        }
+
+        /* View Transitions */
+        html {
+            background-color: #0a0a0a;
+        }
+        @view-transition {
+            navigation: auto;
+        }
+        ::view-transition {
+            background-color: #0a0a0a;
+        }
+        ::view-transition-old(main-content) {
+            animation: 0.25s ease-out both fade-out;
+        }
+        ::view-transition-new(main-content) {
+            animation: 0.25s ease-in 0.1s both fade-in;
+        }
+        @keyframes fade-out {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation: none;
+            mix-blend-mode: normal;
+        }
+    </style>
+<style>@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}} img{max-width:100%}</style><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const button=document.querySelector('header button[aria-label="Menu"]');
+  const desktopNav=document.querySelector('header nav');
+  if(button && desktopNav){
+    const panel=desktopNav.cloneNode(true);
+    panel.id='mobile-navigation';
+    panel.className='hidden';
+    panel.style.cssText='position:absolute;top:80px;left:20px;right:20px;padding:24px;background:white;border:1px solid #E5E7EB;border-radius:12px;box-shadow:0 16px 40px #17191D20;z-index:100';
+    panel.querySelectorAll('a').forEach((a,i)=>{a.id='mobile-link-'+i;a.style.display='block';a.style.padding='12px 0';a.addEventListener('click',()=>{panel.classList.add('hidden');button.setAttribute('aria-expanded','false');});});
+    document.querySelector('header').append(panel);
+    button.setAttribute('aria-controls','mobile-navigation');
+    button.setAttribute('aria-expanded','false');
+    button.addEventListener('click',()=>{const open=panel.classList.toggle('hidden')===false;button.setAttribute('aria-expanded',String(open));});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){panel.classList.add('hidden');button.setAttribute('aria-expanded','false');}});
+    window.addEventListener('resize',()=>{if(innerWidth>=768){panel.classList.add('hidden');button.setAttribute('aria-expanded','false');}});
+  }
+});
+</script><link rel="stylesheet" href="/assets/css/wecarevets.css"><link rel="icon" type="image/jpeg" href="/assets/brand/qubit-symbol.jpg"><link rel="canonical" href="https://qubit-us.com/wecarevets/"></head>
+<body>
+    <div class="min-h-screen bg-warm-white text-charcoal font-sans selection:bg-red selection:text-white">
+
+        <!-- Navigation -->
+        <header class="sticky top-0 z-50 bg-white border-b border-light-gray shadow-sm">
+            <div class="max-w-content mx-auto px-[20px] lg:px-[64px] h-[80px] flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <a id="nav-back-home" href="/" class="custom-focus-ring text-slate hover:text-navy transition-colors" aria-label="Back to Qubit">
+                        <iconify-icon icon="lucide:arrow-left" class="text-2xl"></iconify-icon>
+                    </a>
+                    <a id="nav-logo" href="#" class="custom-focus-ring font-extrabold text-2xl tracking-tight text-navy">
+                        WeCareVets
+                        <span class="text-red">.</span>
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-[32px]">
+                    <a id="nav-mission" href="#mission" class="text-body text-navy hover:text-red transition-colors custom-focus-ring font-medium">Our mission</a>
+                    <a id="nav-programs" href="#programs" class="text-body text-navy hover:text-red transition-colors custom-focus-ring font-medium">Planned programs</a>
+                </nav>
+
+                <div class="flex items-center gap-[16px]">
+                    <a id="nav-get-involved" href="#get-involved" class="hidden md:inline-flex items-center justify-center min-h-[48px] px-[24px] bg-red text-white font-medium hover:bg-navy transition-colors custom-focus-ring rounded-[8px] shadow-md">
+                        Get involved
+                    </a>
+                    <button class="md:hidden flex items-center justify-center w-[48px] h-[48px] text-navy hover:text-red custom-focus-ring" aria-label="Menu">
+                        <iconify-icon icon="lucide:menu" class="text-h-small"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main style="view-transition-name: main-content">
+            <!-- Hero Section -->
+            <section class="relative min-h-[90vh] flex items-center bg-navy overflow-hidden">
+                <!-- Background Image -->
+                <div class="absolute inset-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1765996855368-fe01a1734ccb?auto=format&fit=crop&w=2000&q=85" alt="A veteran and family member at a recognition ceremony" class="w-full h-full object-cover opacity-50" decoding="async" fetchpriority="high" loading="eager">
+                    <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-80"></div>
+                </div>
+
+                <div class="max-w-content mx-auto px-[20px] lg:px-[64px] relative z-10 w-full py-[64px] lg:py-[120px]">
+                    <div class="max-w-[800px] space-y-[32px]">
+                        <div class="inline-block border border-white/20 px-[16px] py-[8px] rounded-[16px] bg-navy/50 backdrop-blur-sm shadow-sm">
+                            <span class="text-metadata text-white tracking-widest uppercase font-semibold flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red animate-pulse"></span>
+                                Upcoming Initiative
+                            </span>
+                        </div>
+
+                        <h1 class="text-h-hero-mobile lg:text-h-hero-desktop font-extrabold tracking-tight text-white leading-tight drop-shadow-lg">
+                            Serving those who served.<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red to-red/80">Building what comes next.</span>
+                        </h1>
+
+                        <p class="text-[20px] lg:text-[24px] text-white/90 max-w-[650px] leading-relaxed drop-shadow">
+                            An upcoming initiative in development connecting veterans and their families with career opportunities, practical resources, and community support. Because the transition to civilian life shouldn't happen alone.
+                        </p>
+
+                        <div class="flex flex-wrap gap-[16px] pt-[16px]">
+                            <a id="hero-get-involved" href="#get-involved" class="inline-flex items-center justify-center min-h-[56px] px-[32px] bg-red text-white font-medium hover:bg-white hover:text-navy transition-colors custom-focus-ring rounded-[8px] shadow-lg text-[18px]">
+                                Discover ways to help
+                                <iconify-icon icon="lucide:arrow-down" class="ml-2"></iconify-icon>
+                            </a>
+                            <a id="hero-learn-more" href="#mission" class="inline-flex items-center justify-center min-h-[56px] px-[32px] bg-transparent border-2 border-white/30 text-white font-medium hover:bg-white/10 transition-colors custom-focus-ring rounded-[8px] text-[18px]">
+                                Our Mission
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Info Bar -->
+            <div class="bg-red text-white py-4 px-[20px] lg:px-[64px]">
+                <div class="max-w-content mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                    <div class="font-medium text-lg">
+                        Veterans. Military Spouses. Stronger Communities.
+                    </div>
+                    <div class="text-sm text-white/80">
+                        Currently in active planning and development phase.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission Section -->
+            <section id="mission" class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-warm-white">
+                <div class="max-w-content mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-[64px] items-center">
+                        <div>
+                            <h2 class="text-h-section font-bold tracking-tight mb-[24px] text-navy">More than a job board. A comprehensive pathway.</h2>
+                            <p class="text-[20px] text-slate leading-relaxed mb-6">
+                                Transitioning from military to civilian life presents unique challenges that require more than just employment. We are designing a holistic model to support veterans and their families.
+                            </p>
+                            <p class="text-body text-slate leading-relaxed mb-8">
+                                The WeCareVets initiative is being developed to bridge the gap between military service and civilian success by addressing careers, benefits, wellness, and community connection in a single, coordinated effort.
+                            </p>
+
+                            <div class="grid sm:grid-cols-2 gap-8 mt-12">
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-navy/5 text-navy flex items-center justify-center shrink-0">
+                                        <iconify-icon icon="lucide:users" class="text-2xl"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-navy mb-1">For Veterans</h4>
+                                        <p class="text-sm text-slate">Meaningful careers and support tailored to your experience.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-navy/5 text-navy flex items-center justify-center shrink-0">
+                                        <iconify-icon icon="lucide:heart-handshake" class="text-2xl"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-navy mb-1">For Families</h4>
+                                        <p class="text-sm text-slate">Resources and community for military spouses and children.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="aspect-[4/5] rounded-[16px] overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1400&q=85" alt="People sharing time outdoors" class="w-full h-full object-cover" decoding="async" loading="lazy">
+                            </div>
+                            <div class="absolute -bottom-[32px] -left-[32px] bg-white p-[32px] rounded-[16px] shadow-xl max-w-[300px] hidden md:block border-t-4 border-red">
+                                <iconify-icon icon="lucide:quote" class="text-4xl text-light-gray mb-4"></iconify-icon>
+                                <p class="font-medium text-navy leading-snug">
+                                    Experience gained in service deserves a meaningful path forward.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Planned Programs Grid -->
+            <section id="programs" class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-white border-t border-light-gray">
+                <div class="max-w-content mx-auto">
+                    <div class="mb-[80px] max-w-[800px]">
+                        <div class="inline-block mb-4">
+                            <span class="text-metadata text-red tracking-widest uppercase font-semibold border border-red/20 px-3 py-1 rounded-full bg-red/5">
+                                In Development
+                            </span>
+                        </div>
+                        <h2 class="text-h-section font-bold tracking-tight mb-[24px] text-navy">Planned Support Areas</h2>
+                        <p class="text-[20px] text-slate leading-relaxed">Everyone's next mission looks different. We are building a flexible network of resources to address varied needs.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-[32px]">
+                        <!-- Program 1 -->
+                        <div class="bg-warm-white p-[40px] rounded-[16px] border border-light-gray hover:border-navy/20 hover:shadow-lg transition-all duration-300 group">
+                            <div class="w-[64px] h-[64px] bg-navy text-white rounded-xl flex items-center justify-center mb-[24px] group-hover:scale-110 transition-transform">
+                                <iconify-icon icon="lucide:briefcase" class="text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-h-small font-bold mb-[16px] text-navy">Careers &amp; Skills</h3>
+                            <p class="text-slate mb-[24px] leading-relaxed">
+                                Planned connections to veteran-friendly employers, skills translation, training programs, and flexible work opportunities.
+                            </p>
+                        </div>
+
+                        <!-- Program 2 -->
+                        <div class="bg-warm-white p-[40px] rounded-[16px] border border-light-gray hover:border-navy/20 hover:shadow-lg transition-all duration-300 group">
+                            <div class="w-[64px] h-[64px] bg-navy text-white rounded-xl flex items-center justify-center mb-[24px] group-hover:scale-110 transition-transform">
+                                <iconify-icon icon="lucide:compass" class="text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-h-small font-bold mb-[16px] text-navy">Benefits Navigation</h3>
+                            <p class="text-slate mb-[24px] leading-relaxed">
+                                Future tools to help untangle red tape and connect veterans with the benefits and services they have earned.
+                            </p>
+                        </div>
+
+                        <!-- Program 3 -->
+                        <div class="bg-warm-white p-[40px] rounded-[16px] border border-light-gray hover:border-navy/20 hover:shadow-lg transition-all duration-300 group">
+                            <div class="w-[64px] h-[64px] bg-navy text-white rounded-xl flex items-center justify-center mb-[24px] group-hover:scale-110 transition-transform">
+                                <iconify-icon icon="lucide:activity" class="text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-h-small font-bold mb-[16px] text-navy">Health &amp; Wellness</h3>
+                            <p class="text-slate mb-[24px] leading-relaxed">
+                                A planned directory and connection model linking veterans to physical and mental health resources in their local area.
+                            </p>
+                        </div>
+
+                        <!-- Program 4 -->
+                        <div class="bg-warm-white p-[40px] rounded-[16px] border border-light-gray hover:border-navy/20 hover:shadow-lg transition-all duration-300 group">
+                            <div class="w-[64px] h-[64px] bg-navy text-white rounded-xl flex items-center justify-center mb-[24px] group-hover:scale-110 transition-transform">
+                                <iconify-icon icon="lucide:home" class="text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-h-small font-bold mb-[16px] text-navy">Family Experiences</h3>
+                            <p class="text-slate mb-[24px] leading-relaxed">
+                                Envisioned programs focused on military spouses and children, recognizing that the whole family serves.
+                            </p>
+                        </div>
+
+                        <!-- Program 5 -->
+                        <div class="bg-warm-white p-[40px] rounded-[16px] border border-light-gray hover:border-navy/20 hover:shadow-lg transition-all duration-300 group md:col-span-2 lg:col-span-2 flex flex-col md:flex-row gap-[32px] items-center">
+                            <div class="shrink-0">
+                                <div class="w-[64px] h-[64px] bg-red text-white rounded-xl flex items-center justify-center mb-[24px] md:mb-0 group-hover:scale-110 transition-transform">
+                                    <iconify-icon icon="lucide:messages-square" class="text-3xl"></iconify-icon>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-h-small font-bold mb-[16px] text-navy">Community &amp; Mentorship</h3>
+                                <p class="text-slate leading-relaxed">
+                                    The core of our planned initiative: building strong, supportive local networks. Connecting transitioning veterans with those who have walked the path before them to share advice, open doors, and provide a sense of belonging.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Connection Model -->
+            <section class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-navy text-white text-center">
+                <div class="max-w-content mx-auto">
+                    <h2 class="text-h-section font-bold tracking-tight mb-[64px]">The Planned Connection Model</h2>
+
+                    <div class="grid md:grid-cols-3 gap-[48px] relative">
+                        <div class="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-[2px] bg-white/20 border-dashed border-t-2"></div>
+
+                        <div class="relative z-10">
+                            <div class="w-[80px] h-[80px] mx-auto bg-navy border-4 border-white rounded-full flex items-center justify-center mb-[24px] shadow-[0_0_0_8px_rgba(255,255,255,0.1)]">
+                                <iconify-icon icon="lucide:search" class="text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-h-small font-bold mb-[16px]">1. Discover Support</h3>
+                            <p class="text-white/70 px-4">Assess needs, skills, and goals to find relevant opportunities and resources.</p>
+                        </div>
+
+                        <div class="relative z-10">
+                            <div class="w-[80px] h-[80px] mx-auto bg-navy border-4 border-white rounded-full flex items-center justify-center mb-[24px] shadow-[0_0_0_8px_rgba(255,255,255,0.1)]">
+                                <iconify-icon icon="lucide:link" class="text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-h-small font-bold mb-[16px]">2. Connect</h3>
+                            <p class="text-white/70 px-4">Link directly with employers, mentors, and local support organizations.</p>
+                        </div>
+
+                        <div class="relative z-10">
+                            <div class="w-[80px] h-[80px] mx-auto bg-red border-4 border-white rounded-full flex items-center justify-center mb-[24px] shadow-[0_0_0_8px_rgba(211,47,47,0.3)]">
+                                <iconify-icon icon="lucide:trending-up" class="text-3xl"></iconify-icon>
+                            </div>
+                            <h3 class="text-h-small font-bold mb-[16px]">3. Take Next Step</h3>
+                            <p class="text-white/70 px-4">Secure employment, access training, or engage with the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Get Involved Split -->
+            <section id="get-involved" class="py-0 bg-white overflow-hidden">
+                <div class="grid lg:grid-cols-2">
+                    <!-- Employer Side -->
+                    <div class="relative py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] lg:pr-[80px] bg-warm-white">
+                        <div class="max-w-[600px] ml-auto">
+                            <div class="mb-[32px]">
+                                <iconify-icon icon="lucide:building" class="text-5xl text-navy mb-[24px]"></iconify-icon>
+                                <h2 class="text-[40px] font-bold mb-[16px] text-navy leading-tight">Partner as an Employer</h2>
+                                <p class="text-[18px] text-slate leading-relaxed mb-[32px]">
+                                    We are seeking forward-thinking companies to help design our employment pathways. Express your interest in joining our future network of employers who value veteran leadership, discipline, and skills.
+                                </p>
+                            </div>
+                            <form class="space-y-4 bg-white p-6 rounded-xl border border-light-gray shadow-sm" onsubmit="event.preventDefault();">
+                                <div class="mb-4">
+                                    <span class="inline-block px-2 py-1 bg-light-gray text-slate text-xs font-bold uppercase tracking-wider rounded">Preview — enrollment opens later</span>
+                                </div>
+                                <div>
+                                    <label for="emp-name" class="block text-sm font-medium text-navy mb-1">Company Name</label>
+                                    <input disabled type="text" id="emp-name" class="w-full px-4 py-3 rounded-lg border border-light-gray focus:border-navy focus:ring-1 focus:ring-navy outline-none transition-colors" placeholder="Your company">
+                                </div>
+                                <div>
+                                    <label for="emp-email" class="block text-sm font-medium text-navy mb-1">Contact Email</label>
+                                    <input disabled type="email" id="emp-email" class="w-full px-4 py-3 rounded-lg border border-light-gray focus:border-navy focus:ring-1 focus:ring-navy outline-none transition-colors" placeholder="you@company.com">
+                                </div>
+                                <button type="button" disabled aria-disabled="true" class="w-full py-3 px-6 bg-navy text-white font-medium rounded-lg hover:bg-navy/90 transition-colors mt-2">
+                                    Express Interest
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Volunteer Side -->
+                    <div class="relative py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] lg:pl-[80px] bg-navy text-white">
+                        <div class="absolute inset-0 z-0 opacity-20">
+                            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="People volunteering" class="w-full h-full object-cover" decoding="async" loading="lazy">
+                        </div>
+                        <div class="max-w-[600px] mr-auto relative z-10">
+                            <div class="mb-[32px]">
+                                <iconify-icon icon="lucide:hand-heart" class="text-5xl text-red mb-[24px]"></iconify-icon>
+                                <h2 class="text-[40px] font-bold mb-[16px] leading-tight">Volunteer &amp; Support</h2>
+                                <p class="text-[18px] text-white/80 leading-relaxed mb-[32px]">
+                                    Building a strong community requires dedicated individuals. Whether you're a veteran willing to mentor, or a civilian wanting to support our planned programs, we want to hear from you.
+                                </p>
+                            </div>
+                            <form class="space-y-4 bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20" onsubmit="event.preventDefault();">
+                                <div class="mb-4">
+                                    <span class="inline-block px-2 py-1 bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded">Preview — enrollment opens later</span>
+                                </div>
+                                <div>
+                                    <label for="vol-name" class="block text-sm font-medium text-white mb-1">Full Name</label>
+                                    <input disabled type="text" id="vol-name" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/30 text-white placeholder-white/50 focus:border-white focus:ring-1 focus:ring-white outline-none transition-colors" placeholder="Your name">
+                                </div>
+                                <div>
+                                    <label for="vol-email" class="block text-sm font-medium text-white mb-1">Email Address</label>
+                                    <input disabled type="email" id="vol-email" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/30 text-white placeholder-white/50 focus:border-white focus:ring-1 focus:ring-white outline-none transition-colors" placeholder="you@example.com">
+                                </div>
+                                <button type="button" disabled aria-disabled="true" class="w-full py-3 px-6 bg-red text-white font-medium rounded-lg hover:bg-red/90 transition-colors mt-2">
+                                    Join the Waitlist
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-charcoal text-white pt-[96px] pb-[48px] px-[20px] lg:px-[64px]">
+            <div class="max-w-content mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-[64px] mb-[64px]">
+                    <div class="lg:col-span-2">
+                        <div class="font-extrabold text-3xl tracking-tight text-white mb-6">
+                            WeCareVets<span class="text-red">.</span>
+                        </div>
+                        <p class="text-white/60 text-[18px] max-w-[400px] leading-relaxed mb-8">
+                            An upcoming initiative dedicated to serving those who served by building what comes next.
+                        </p>
+                        <div class="inline-block px-4 py-2 bg-white/10 rounded-lg border border-white/20">
+                            <span class="text-sm font-medium text-white/80">Status: In Active Development</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold mb-[32px] tracking-wide text-[18px]">Initiative</h4>
+                        <ul class="space-y-[20px]">
+                            <li><a id="footer-mission" href="#mission" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">Our Mission</a></li>
+                            <li><a id="footer-programs" href="#programs" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">Planned Programs</a></li>
+                            <li><a id="footer-get-involved" href="#get-involved" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">Get Involved</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold mb-[32px] tracking-wide text-[18px]">Built By</h4>
+                        <div class="bg-white inline-block p-[16px] rounded-[8px] mb-[16px]">
+                            <img src="/assets/brand/qubit-logo.jpg" alt="Qubit Logo" class="w-[120px] h-auto object-contain" decoding="async" loading="eager">
+                        </div>
+                        <p class="text-white/60 text-[14px]">
+                            Designed and developed by Qubit.
+                        </p>
+                        <a id="footer-qubit-home" href="/" class="inline-flex items-center gap-2 text-red hover:text-white transition-colors mt-4 text-sm font-medium">
+                            Return to Qubit <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-[48px] border-t border-white/10 text-white/50 text-[14px] flex flex-col md:flex-row justify-between items-center gap-[24px]">
+                    <p>© 2026 WeCareVets Initiative. All rights reserved.</p>
+                    <p>Upcoming initiative. Programs are in development.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

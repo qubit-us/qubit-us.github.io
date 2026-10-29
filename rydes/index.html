@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rydes - Your community. Your way there.</title>
+    <meta name="description" content="Rydes is an upcoming private community carpooling solution starting with workplace circles.">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <meta name="view-transition" content="same-origin">
+
+
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .custom-focus-ring:focus-visible {
+            outline: 2px solid #0A0B0E;
+            outline-offset: 4px;
+        }
+
+        /* View Transitions */
+        html {
+            background-color: #F5F5F0;
+        }
+        @view-transition {
+            navigation: auto;
+        }
+        ::view-transition {
+            background-color: #F5F5F0;
+        }
+
+        ::view-transition-old(main-content) {
+            animation: 0.25s ease-out both fade-out;
+        }
+        ::view-transition-new(main-content) {
+            animation: 0.25s ease-in 0.1s both fade-in;
+        }
+
+        @keyframes fade-out {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation: none;
+            mix-blend-mode: normal;
+        }
+    </style>
+<style>@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}} img{max-width:100%}</style><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const button=document.querySelector('header button[aria-label="Menu"]');
+  const desktopNav=document.querySelector('header nav');
+  if(button && desktopNav){
+    const panel=desktopNav.cloneNode(true);
+    panel.id='mobile-navigation';
+    panel.className='hidden';
+    panel.style.cssText='position:absolute;top:80px;left:20px;right:20px;padding:24px;background:white;border:1px solid #E5E7EB;border-radius:12px;box-shadow:0 16px 40px #17191D20;z-index:100';
+    panel.querySelectorAll('a').forEach((a,i)=>{a.id='mobile-link-'+i;a.style.display='block';a.style.padding='12px 0';a.addEventListener('click',()=>{panel.classList.add('hidden');button.setAttribute('aria-expanded','false');});});
+    document.querySelector('header').append(panel);
+    button.setAttribute('aria-controls','mobile-navigation');
+    button.setAttribute('aria-expanded','false');
+    button.addEventListener('click',()=>{const open=panel.classList.toggle('hidden')===false;button.setAttribute('aria-expanded',String(open));});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){panel.classList.add('hidden');button.setAttribute('aria-expanded','false');}});
+    window.addEventListener('resize',()=>{if(innerWidth>=768){panel.classList.add('hidden');button.setAttribute('aria-expanded','false');}});
+  }
+});
+</script><link rel="stylesheet" href="/assets/css/rydes.css"><link rel="icon" type="image/jpeg" href="/assets/brand/qubit-symbol.jpg"><link rel="canonical" href="https://qubit-us.com/rydes/"></head>
+<body>
+    <div class="min-h-screen bg-rydes-offwhite text-rydes-ink font-sans selection:bg-rydes-lime selection:text-rydes-ink">
+
+        <!-- Navigation -->
+        <header class="sticky top-0 z-50 bg-rydes-offwhite/90 backdrop-blur-md border-b border-light-gray">
+            <div class="max-w-content mx-auto px-[20px] lg:px-[64px] h-[80px] flex items-center justify-between">
+                <div class="flex items-center gap-[24px]">
+                    <a id="nav-back-home" href="/" class="custom-focus-ring flex items-center text-slate hover:text-rydes-ink transition-colors" aria-label="Back to Qubit">
+                        <iconify-icon icon="lucide:arrow-left" class="text-[24px]"></iconify-icon>
+                    </a>
+                    <a id="nav-rydes-logo" href="#" class="custom-focus-ring flex items-center shrink-0 p-2 rounded -ml-2" aria-label="Rydes Home">
+                        <img src="/assets/brand/rydes-logo.png" alt="Rydes Logo" class="h-[40px] w-auto object-contain" decoding="async" loading="eager">
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-[32px]">
+                    <a id="nav-how-it-works" href="#how-it-works" class="text-body text-rydes-ink hover:text-slate transition-colors custom-focus-ring font-medium">How it works</a>
+                    <a id="nav-workplace-pilot" href="#workplace-pilot" class="text-body text-rydes-ink hover:text-slate transition-colors custom-focus-ring font-medium">Workplace pilot</a>
+                </nav>
+
+                <div class="flex items-center gap-[16px]">
+                    <a id="nav-cta" href="#workplace-pilot" class="hidden md:inline-flex items-center justify-center min-h-[48px] px-[24px] bg-rydes-ink text-rydes-lime font-medium hover:bg-rydes-ink/90 transition-colors custom-focus-ring rounded-[8px]">
+                        Explore the workplace pilot
+                    </a>
+                    <button class="md:hidden flex items-center justify-center w-[48px] h-[48px] text-rydes-ink custom-focus-ring" aria-label="Menu">
+                        <iconify-icon icon="lucide:menu" class="text-h-small"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main style="view-transition-name: main-content">
+            <!-- Hero Section -->
+            <section class="relative pt-[64px] pb-[96px] lg:pt-[120px] lg:pb-[144px] px-[20px] lg:px-[64px] overflow-hidden">
+                <div class="max-w-content mx-auto">
+                    <div class="grid lg:grid-cols-12 gap-[64px] items-center">
+                        <div class="lg:col-span-5 order-2 lg:order-1 relative z-10">
+                            <div class="inline-flex items-center gap-[8px] border border-rydes-ink/20 px-[16px] py-[8px] rounded-[16px] bg-white/50 backdrop-blur-sm mb-[32px]">
+                                <div class="w-[8px] h-[8px] rounded-full bg-rydes-ink animate-pulse"></div>
+                                <span class="text-metadata text-rydes-ink tracking-widest uppercase font-bold">
+                                    Upcoming Product
+                                </span>
+                            </div>
+
+                            <h1 class="text-[56px] lg:text-[72px] font-bold tracking-tight text-rydes-ink leading-[1.05] mb-[32px]">
+                                Your community.<br>
+                                Your way there.
+                            </h1>
+
+                            <p class="text-[20px] lg:text-[24px] text-slate max-w-[600px] leading-relaxed mb-[48px]">
+                                A private community carpooling solution starting with workplace circles to make daily commutes more efficient and connected.
+                            </p>
+
+                            <div class="flex flex-wrap gap-[16px]">
+                                <a id="hero-cta" href="#workplace-pilot" class="inline-flex items-center justify-center min-h-[56px] px-[32px] bg-rydes-ink text-rydes-lime font-bold hover:bg-rydes-ink/90 transition-colors custom-focus-ring rounded-[8px] text-[18px]">
+                                    Explore the workplace pilot
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-7 order-1 lg:order-2 relative">
+                            <div class="aspect-[4/3] rounded-[24px] overflow-hidden relative">
+                                <img src="https://images.pexels.com/photos/4005053/pexels-photo-4005053.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Friends sharing a car journey" class="w-full h-full object-cover" decoding="async" fetchpriority="high" loading="eager">
+                                <div class="absolute inset-0 bg-gradient-to-t from-rydes-ink/60 to-transparent"></div>
+                            </div>
+
+                            <!-- Illustrative App Preview -->
+                            <div class="absolute -bottom-[32px] -left-[32px] bg-white p-[24px] rounded-[24px] shadow-2xl w-[320px] hidden md:block border border-light-gray">
+                                <div class="text-[12px] font-semibold text-slate uppercase tracking-wider mb-[16px] flex items-center justify-between">
+                                    <span>Illustrative App Preview</span>
+                                    <iconify-icon icon="lucide:smartphone" class="text-[16px]"></iconify-icon>
+                                </div>
+                                <div class="bg-rydes-offwhite p-[16px] rounded-[16px] mb-[16px]">
+                                    <div class="flex items-center gap-[12px] mb-[12px]">
+                                        <div class="w-[40px] h-[40px] bg-rydes-lime rounded-full flex items-center justify-center font-bold text-rydes-ink">
+                                            SJ
+                                        </div>
+                                        <div>
+                                            <div class="font-bold text-[16px] text-rydes-ink">Sarah Jenkins</div>
+                                            <div class="text-slate text-[14px]">Downtown Office Circle</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between py-[12px] border-t border-light-gray">
+                                        <div class="flex flex-col">
+                                            <span class="text-[14px] text-slate">Departs</span>
+                                            <span class="font-bold text-rydes-ink">7:45 AM</span>
+                                        </div>
+                                        <div class="flex flex-col text-right">
+                                            <span class="text-[14px] text-slate">Seats</span>
+                                            <span class="font-bold text-rydes-ink">2 available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="w-full h-[48px] bg-rydes-ink text-rydes-lime rounded-[12px] font-bold text-[16px]">
+                                    Request Seat
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Commute Together -->
+            <section class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-white">
+                <div class="max-w-content mx-auto">
+                    <div class="mb-[96px] max-w-[800px]">
+                        <h2 class="text-h-section font-bold tracking-tight mb-[24px] text-rydes-ink">Why commute together?</h2>
+                        <p class="text-[20px] text-slate leading-relaxed">Transforming the daily drive from a solitary routine into a shared opportunity for connection and efficiency.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-[48px]">
+                        <div class="space-y-[24px]">
+                            <div class="w-[64px] h-[64px] rounded-[16px] bg-rydes-offwhite flex items-center justify-center text-rydes-ink">
+                                <iconify-icon icon="lucide:users" class="text-[32px]"></iconify-icon>
+                            </div>
+                            <h3 class="text-[24px] font-bold text-rydes-ink">Private Circles</h3>
+                            <p class="text-body text-slate">Connect with approved members of your workplace circle. Commute with people you already share a professional community with.</p>
+                        </div>
+                        <div class="space-y-[24px]">
+                            <div class="w-[64px] h-[64px] rounded-[16px] bg-rydes-offwhite flex items-center justify-center text-rydes-ink">
+                                <iconify-icon icon="lucide:leaf" class="text-[32px]"></iconify-icon>
+                            </div>
+                            <h3 class="text-[24px] font-bold text-rydes-ink">Fewer Cars</h3>
+                            <p class="text-body text-slate">Reduce parking congestion at the office and lower your collective carbon footprint by sharing rides that are already happening.</p>
+                        </div>
+                        <div class="space-y-[24px]">
+                            <div class="w-[64px] h-[64px] rounded-[16px] bg-rydes-offwhite flex items-center justify-center text-rydes-ink">
+                                <iconify-icon icon="lucide:clock" class="text-[32px]"></iconify-icon>
+                            </div>
+                            <h3 class="text-[24px] font-bold text-rydes-ink">Scheduled Ease</h3>
+                            <p class="text-body text-slate">Plan your week in advance. Coordinate regular routes or find a one-off ride when you need to head into the office.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How it Works -->
+            <section id="how-it-works" class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-rydes-ink text-white">
+                <div class="max-w-content mx-auto">
+                    <div class="mb-[96px] text-center">
+                        <h2 class="text-h-section font-bold tracking-tight mb-[24px]">How it works</h2>
+                    </div>
+
+                    <div class="space-y-[96px] lg:space-y-[120px]">
+                        <!-- Step 1 -->
+                        <div class="grid lg:grid-cols-2 gap-[48px] lg:gap-[96px] items-center">
+                            <div class="order-2 lg:order-1">
+                                <div class="text-rydes-lime font-bold text-[24px] mb-[16px]">01</div>
+                                <h3 class="text-[40px] font-bold mb-[24px] leading-tight">Join your workplace circle</h3>
+                                <p class="text-[20px] text-white/70 leading-relaxed">
+                                    Verify your work email and join your workplace circle through an approved invitation. Explore planned rides shared within your circle.
+                                </p>
+                            </div>
+                            <div class="order-1 lg:order-2">
+                                <div class="aspect-[4/3] rounded-[24px] bg-white/5 border border-white/10 p-[32px] flex items-center justify-center">
+                                    <div class="w-[280px] bg-white rounded-[20px] p-[24px] text-rydes-ink shadow-2xl transform rotate-3">
+                                        <div class="font-bold text-[18px] mb-[16px] border-b border-light-gray pb-[12px]">Verify Workplace</div>
+                                        <div class="space-y-[16px]">
+                                            <div class="h-[48px] bg-rydes-offwhite rounded-[8px] flex items-center px-[16px] text-slate text-[14px]">
+                                                alex@company.com
+                                            </div>
+                                            <div class="h-[48px] bg-rydes-ink text-rydes-lime rounded-[8px] flex items-center justify-center font-bold">
+                                                Join Circle
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="grid lg:grid-cols-2 gap-[48px] lg:gap-[96px] items-center">
+                            <div>
+                                <div class="aspect-[4/3] rounded-[24px] bg-white/5 border border-white/10 p-[32px] flex items-center justify-center">
+                                    <div class="w-[280px] bg-white rounded-[20px] p-[24px] text-rydes-ink shadow-2xl transform -rotate-3">
+                                        <div class="font-bold text-[18px] mb-[16px]">Planned Rides</div>
+                                        <div class="space-y-[12px]">
+                                            <div class="p-[12px] bg-rydes-offwhite rounded-[12px]">
+                                                <div class="font-bold text-[14px]">Tomorrow, 8:00 AM</div>
+                                                <div class="text-slate text-[12px]">Northside → Office</div>
+                                            </div>
+                                            <div class="p-[12px] bg-rydes-offwhite rounded-[12px] border-2 border-rydes-lime">
+                                                <div class="font-bold text-[14px]">Wed, 7:30 AM</div>
+                                                <div class="text-slate text-[12px]">West End → Office</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-rydes-lime font-bold text-[24px] mb-[16px]">02</div>
+                                <h3 class="text-[40px] font-bold mb-[24px] leading-tight">Find or offer a planned ride</h3>
+                                <p class="text-[20px] text-white/70 leading-relaxed">
+                                    Browse upcoming commutes offered by colleagues, or post your own driving schedule to let others know you have empty seats.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="grid lg:grid-cols-2 gap-[48px] lg:gap-[96px] items-center">
+                            <div class="order-2 lg:order-1">
+                                <div class="text-rydes-lime font-bold text-[24px] mb-[16px]">03</div>
+                                <h3 class="text-[40px] font-bold mb-[24px] leading-tight">Request a seat and get confirmation</h3>
+                                <p class="text-[20px] text-white/70 leading-relaxed">
+                                    Tap to request a spot. Once the driver confirms, you'll get pickup details. Simple, predictable, and organized.
+                                </p>
+                            </div>
+                            <div class="order-1 lg:order-2">
+                                <div class="aspect-[4/3] rounded-[24px] bg-white/5 border border-white/10 p-[32px] flex items-center justify-center">
+                                    <div class="w-[280px] bg-white rounded-[20px] p-[24px] text-rydes-ink shadow-2xl transform rotate-3">
+                                        <div class="flex items-center justify-center w-[64px] h-[64px] bg-rydes-lime rounded-full mx-auto mb-[16px]">
+                                            <iconify-icon icon="lucide:check" class="text-[32px] text-rydes-ink"></iconify-icon>
+                                        </div>
+                                        <div class="text-center font-bold text-[18px] mb-[8px]">Seat Confirmed!</div>
+                                        <div class="text-center text-slate text-[14px]">Sarah will pick you up at 7:45 AM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workplace Pilot Interest -->
+            <section id="workplace-pilot" class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-rydes-lime">
+                <div class="max-w-content mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-[64px] items-center">
+                        <div>
+                            <h2 class="text-[48px] lg:text-[64px] font-bold tracking-tight text-rydes-ink leading-[1.05] mb-[24px]">
+                                Bring Rydes to your office.
+                            </h2>
+                            <p class="text-[20px] text-rydes-ink/80 leading-relaxed mb-[48px]">
+                                Rydes is being designed for an initial workplace pilot. This preview illustrates how organizations could express interest when pilot enrollment opens.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-[32px] lg:p-[48px] rounded-[24px] shadow-xl">
+                            <div class="text-[12px] font-semibold text-slate uppercase tracking-wider mb-[24px]">
+                                Pilot Interest Form (Design Preview)
+                            </div>
+                            <form class="space-y-[24px]" onsubmit="event.preventDefault();">
+                                <div>
+                                    <label class="block text-[14px] font-bold text-rydes-ink mb-[8px]">Work Email</label>
+                                    <input type="email" placeholder="you@company.com" class="w-full h-[56px] px-[16px] bg-rydes-offwhite border border-light-gray rounded-[8px] focus:outline-none focus:border-rydes-ink focus:ring-1 focus:ring-rydes-ink transition-colors" disabled>
+                                </div>
+                                <div>
+                                    <label class="block text-[14px] font-bold text-rydes-ink mb-[8px]">Company Name</label>
+                                    <input type="text" placeholder="Acme Corp" class="w-full h-[56px] px-[16px] bg-rydes-offwhite border border-light-gray rounded-[8px] focus:outline-none focus:border-rydes-ink focus:ring-1 focus:ring-rydes-ink transition-colors" disabled>
+                                </div>
+                                <div>
+                                    <label class="block text-[14px] font-bold text-rydes-ink mb-[8px]">Office City</label>
+                                    <input type="text" placeholder="e.g. Austin, TX" class="w-full h-[56px] px-[16px] bg-rydes-offwhite border border-light-gray rounded-[8px] focus:outline-none focus:border-rydes-ink focus:ring-1 focus:ring-rydes-ink transition-colors" disabled>
+                                </div>
+                                <button type="button" class="w-full h-[56px] bg-rydes-ink text-rydes-lime font-bold rounded-[8px] hover:bg-rydes-ink/90 transition-colors text-[18px] opacity-50 cursor-not-allowed">
+                                    Submit Interest
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQs -->
+            <section class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-rydes-offwhite">
+                <div class="max-w-[800px] mx-auto">
+                    <h2 class="text-h-section font-bold tracking-tight mb-[64px] text-rydes-ink text-center">Frequently Asked Questions</h2>
+
+                    <div class="space-y-[32px]">
+                        <div class="border-b border-light-gray pb-[32px]">
+                            <h3 class="text-[24px] font-bold text-rydes-ink mb-[16px]">Is Rydes available to the public?</h3>
+                            <p class="text-body text-slate">Not currently. Rydes is an upcoming product that will launch initially through private workplace pilots. You must have a verified work email from a participating company to join a circle.</p>
+                        </div>
+                        <div class="border-b border-light-gray pb-[32px]">
+                            <h3 class="text-[24px] font-bold text-rydes-ink mb-[16px]">Who can join a circle?</h3>
+                            <p class="text-body text-slate">The initial pilot is designed for invited, approved workplace members with verified work email addresses. Workplace membership does not certify driving credentials.</p>
+                        </div>
+                        <div class="border-b border-light-gray pb-[32px]">
+                            <h3 class="text-[24px] font-bold text-rydes-ink mb-[16px]">When will the app launch?</h3>
+                            <p class="text-body text-slate">A launch date has not been announced. Rydes is planned to begin with a private workplace pilot; this page previews the intended experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white pt-[96px] pb-[48px] px-[20px] lg:px-[64px] border-t border-light-gray">
+            <div class="max-w-content mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-[48px] mb-[96px]">
+                    <div>
+                        <img src="/assets/brand/rydes-logo.png" alt="Rydes Logo" class="h-[48px] w-auto object-contain mb-[24px]" decoding="async" loading="eager">
+                        <p class="text-slate text-[18px] max-w-[300px]">
+                            Your community. Your way there.
+                        </p>
+                    </div>
+
+                    <div class="bg-rydes-offwhite p-[24px] rounded-[16px] border border-light-gray">
+                        <div class="text-[12px] font-bold text-slate uppercase tracking-widest mb-[16px]">Built By</div>
+                        <a id="footer-qubit-link" href="/" class="block bg-white p-[16px] rounded-[8px] hover:shadow-md transition-shadow">
+                            <img src="/assets/brand/qubit-logo.jpg" alt="Qubit Logo" class="w-[120px] h-auto object-contain" decoding="async" loading="eager">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-[32px] border-t border-light-gray text-slate text-[14px] flex flex-col md:flex-row justify-between items-center gap-[16px]">
+                    <p>© 2026 Rydes. An upcoming project by Qubit.</p>
+                    <div class="flex gap-[24px]">
+
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

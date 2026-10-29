@@ -1,0 +1,13 @@
+{
+  "name": "qubit-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-css.cjs",
+    "verify": "node scripts/verify.cjs",
+    "preview": "node scripts/preview.cjs"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

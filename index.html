@@ -1,257 +1,495 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QubitAI - Scale faster. Automate Smarter. Grow Bigger.</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <title>Qubit - Digital Products, Practical AI, Creative Content</title>
+    <meta name="description" content="Qubit builds apps and websites, helps businesses put AI to work, and creates videos. For small and midsize businesses.">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .custom-focus-ring:focus-visible {
+            outline: 2px solid #C90000;
+            outline-offset: 4px;
+        }
+    </style>
+<style>@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}} img{max-width:100%}</style><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const button=document.querySelector('header button[aria-label="Menu"]');
+  const desktopNav=document.querySelector('header nav');
+  if(button && desktopNav){
+    const panel=desktopNav.cloneNode(true);
+    panel.id='mobile-navigation';
+    panel.className='hidden';
+    panel.style.cssText='position:absolute;top:80px;left:20px;right:20px;padding:24px;background:white;border:1px solid #E5E7EB;border-radius:12px;box-shadow:0 16px 40px #17191D20;z-index:100';
+    panel.querySelectorAll('a').forEach((a,i)=>{a.id='mobile-link-'+i;a.style.display='block';a.style.padding='12px 0';a.addEventListener('click',()=>{panel.classList.add('hidden');button.setAttribute('aria-expanded','false');});});
+    document.querySelector('header').append(panel);
+    button.setAttribute('aria-controls','mobile-navigation');
+    button.setAttribute('aria-expanded','false');
+    button.addEventListener('click',()=>{const open=panel.classList.toggle('hidden')===false;button.setAttribute('aria-expanded',String(open));});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){panel.classList.add('hidden');button.setAttribute('aria-expanded','false');}});
+    window.addEventListener('resize',()=>{if(innerWidth>=768){panel.classList.add('hidden');button.setAttribute('aria-expanded','false');}});
+  }
+});
+</script><link rel="stylesheet" href="/assets/css/home.css"><link rel="icon" type="image/jpeg" href="/assets/brand/qubit-symbol.jpg"><link rel="canonical" href="https://qubit-us.com/"></head>
 <body>
-    <!-- Aurora Background -->
-    <div class="aurora-background">
-        <div class="aurora-overlay"></div>
-    </div>
+    <div class="min-h-screen bg-warm-white text-charcoal font-sans selection:bg-qubit-red selection:text-white">
 
-    <!-- Navigation -->
-    <nav class="navigation">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="brand-text">QubitAI</span>
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-        </div>
-    </nav>
+        <!-- Navigation -->
+        <header class="sticky top-0 z-50 bg-white border-b border-light-gray">
+            <div class="max-w-content mx-auto px-[20px] lg:px-[64px] h-[80px] flex items-center justify-between">
+                <a id="qubit-link-1" href="#" class="custom-focus-ring flex items-center shrink-0 bg-white p-2 rounded" aria-label="Qubit Home">
+                    <img src="/assets/brand/qubit-logo.jpg" alt="Qubit Logo" class="w-[145px] h-auto object-contain" decoding="async" loading="eager">
+                </a>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Home Section - EXACT match -->
-        <section class="hero-section" id="home">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        Scale faster. <span class="accent-text">Automate Smarter.</span> Grow Bigger.
-                    </h1>
-                    <p class="hero-description">
-                        Leverage AI to revolutionize your business! At Scale with AI, we build cutting-edge AI automation, 
-                        chatbots, and voice bots tailored for enterprises and federal agencies. From cloud-based white-label 
-                        solutions to secure on-premise deployments, we help you scale with confidence.
-                    </p>
-                    <p class="hero-subtitle">
-                        Transform the way you work—let AI do the heavy lifting!
-                    </p>
-                    <button class="cta-button">
-                        Get Started Today
+                <nav class="hidden md:flex items-center gap-[32px]">
+                    <a id="qubit-link-2" href="#services" class="text-body text-charcoal hover:text-qubit-red transition-colors custom-focus-ring font-medium">Services</a>
+                    <a id="qubit-link-3" href="#products" class="text-body text-charcoal hover:text-qubit-red transition-colors custom-focus-ring font-medium">Products</a>
+                    <a id="qubit-link-4" href="#process" class="text-body text-charcoal hover:text-qubit-red transition-colors custom-focus-ring font-medium">Process</a>
+                </nav>
+
+                <div class="flex items-center gap-[16px]">
+                    <a id="qubit-link-5" href="#contact" class="hidden md:inline-flex items-center justify-center min-h-[48px] px-[24px] bg-qubit-red text-white font-medium hover:bg-charcoal transition-colors custom-focus-ring rounded-[8px]">
+                        Let's talk
+                    </a>
+                    <button class="md:hidden flex items-center justify-center w-[48px] h-[48px] text-charcoal hover:text-qubit-red custom-focus-ring" aria-label="Menu">
+                        <iconify-icon icon="lucide:menu" class="text-h-small"></iconify-icon>
                     </button>
                 </div>
             </div>
+        </header>
+
+        <!-- Hero Section - Cinematic Photographic -->
+        <section class="relative min-h-[85vh] flex items-center bg-charcoal overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2560&q=80" alt="Team collaborating on business ideas" class="w-full h-full object-cover opacity-40" decoding="async" fetchpriority="high" loading="eager">
+                <div class="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-transparent"></div>
+            </div>
+
+            <div class="max-w-content mx-auto px-[20px] lg:px-[64px] relative z-10 w-full py-[48px] lg:py-[64px]">
+                <div class="max-w-[800px] space-y-[32px]">
+                    <div class="inline-block border border-white/20 px-[16px] py-[8px] rounded-[16px] bg-charcoal/50 backdrop-blur-sm">
+                        <span class="text-metadata text-white tracking-widest uppercase font-semibold">
+                            Digital Products • Practical AI • Creative Content
+                        </span>
+                    </div>
+
+                    <h1 class="text-h-hero-mobile lg:text-h-hero-desktop font-bold tracking-tight text-white leading-tight">
+                        Build your next idea.<br>
+                        Bring AI into your business.<br>
+                        <span class="text-qubit-red">Tell your story.</span>
+                    </h1>
+
+                    <p class="text-[20px] lg:text-[24px] text-white/80 max-w-[600px] leading-relaxed">
+                        We build apps and websites, help businesses put AI to work, and create videos that explain, educate, and promote. For small and midsize businesses.
+                    </p>
+
+                    <div class="flex flex-wrap gap-[16px] pt-[16px]">
+                        <a id="qubit-link-6" href="#contact" class="inline-flex items-center justify-center min-h-[48px] px-[32px] bg-qubit-red text-white font-medium hover:bg-white hover:text-charcoal transition-colors custom-focus-ring rounded-[8px]">
+                            Discuss your project
+                        </a>
+                        <a id="qubit-link-7" href="#products" class="inline-flex items-center justify-center min-h-[48px] px-[32px] bg-transparent border border-white/30 text-white font-medium hover:bg-white/10 transition-colors custom-focus-ring rounded-[8px]">
+                            Explore our work
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Services Section - EXACT match -->
-        <section class="services-section" id="services">
-            <div class="services-content">
-                <div class="container">
-                    <div class="services-header">
-                        <h2 class="services-title">
-                            Our <span class="services-accent">Services</span>
-                        </h2>
-                        <p class="services-description">
-                            Comprehensive AI and development solutions to transform your business
+        <!-- Services Section - Magazine Style -->
+        <section id="services" class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-warm-white">
+            <div class="max-w-content mx-auto">
+                <div class="mb-[96px] lg:flex lg:justify-between lg:items-end border-b border-light-gray pb-[48px]">
+                    <div class="max-w-[700px]">
+                        <h2 class="text-h-section font-bold tracking-tight mb-[24px] text-charcoal">Our Services</h2>
+                        <p class="text-[20px] text-slate leading-relaxed">Comprehensive digital solutions built for the specific needs of small and midsize businesses. We focus on outcomes, not just deliverables.</p>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-y-[96px] gap-x-[64px]">
+                    <!-- Service 1 & 2 Column -->
+                    <div class="space-y-[96px]">
+                        <!-- Service 1 -->
+                        <div class="relative group">
+                            <div class="aspect-[4/3] mb-[32px] overflow-hidden rounded-[16px]">
+                                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="App development" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" decoding="async" loading="lazy">
+                            </div>
+                            <div class="flex gap-[24px]">
+                                <div class="text-h-small font-bold text-qubit-red shrink-0">01</div>
+                                <div>
+                                    <h3 class="text-[32px] font-bold mb-[16px] text-charcoal leading-tight">App development</h3>
+                                    <p class="text-body text-slate">
+                                        Custom web and mobile applications tailored to your business processes. We build robust business tools, taking your idea from initial concept to successful launch with modern, scalable architecture.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div class="relative group">
+                            <div class="aspect-[4/3] mb-[32px] overflow-hidden rounded-[16px]">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="AI consulting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" decoding="async" loading="lazy">
+                            </div>
+                            <div class="flex gap-[24px]">
+                                <div class="text-h-small font-bold text-qubit-red shrink-0">03</div>
+                                <div>
+                                    <h3 class="text-[32px] font-bold mb-[16px] text-charcoal leading-tight">AI consulting &amp; adoption</h3>
+                                    <p class="text-body text-slate">
+                                        Demystify AI for your operations. We help you find practical opportunities, select the right tools, adapt workflows, and support implementation and team adoption to increase efficiency.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 & 4 Column (Offset) -->
+                    <div class="space-y-[96px] lg:mt-[120px]">
+                        <!-- Service 2 -->
+                        <div class="relative group">
+                            <div class="aspect-[4/3] mb-[32px] overflow-hidden rounded-[16px]">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Website design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" decoding="async" loading="lazy">
+                            </div>
+                            <div class="flex gap-[24px]">
+                                <div class="text-h-small font-bold text-qubit-red shrink-0">02</div>
+                                <div>
+                                    <h3 class="text-[32px] font-bold mb-[16px] text-charcoal leading-tight">Website design &amp; development</h3>
+                                    <p class="text-body text-slate">
+                                        High-performance business websites, targeted landing pages, and engaging digital experiences. We focus on clear communication, speed, and conversion to help your business grow online.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service 4 -->
+                        <div class="relative group">
+                            <div class="aspect-[4/3] mb-[32px] overflow-hidden rounded-[16px]">
+                                <img src="https://images.unsplash.com/photo-1543235074-8257d766eb06?auto=format&fit=crop&w=1400&q=85" alt="Video production" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" decoding="async" loading="lazy">
+                            </div>
+                            <div class="flex gap-[24px]">
+                                <div class="text-h-small font-bold text-qubit-red shrink-0">04</div>
+                                <div>
+                                    <h3 class="text-[32px] font-bold mb-[16px] text-charcoal leading-tight">Video &amp; creative production</h3>
+                                    <p class="text-body text-slate">
+                                        Compelling visual storytelling. We produce explainer videos, clear product demos, promotional content, campaigns, educational videos, and targeted ads that resonate with your audience.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products - Charcoal Background for Contrast -->
+        <section id="products" class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-charcoal text-white">
+            <div class="max-w-content mx-auto">
+                <div class="mb-[96px] max-w-[800px]">
+                    <h2 class="text-h-section font-bold tracking-tight mb-[24px]">Products built by Qubit</h2>
+                    <p class="text-[20px] text-white/70 leading-relaxed">We substantiate our capability by building and operating our own digital products. Real-world execution drives our expertise.</p>
+                </div>
+
+                <div class="space-y-[96px] lg:space-y-[160px]">
+                    <!-- SportsDibs -->
+                    <div class="grid lg:grid-cols-12 gap-[48px] lg:gap-[64px] items-center">
+                        <div class="lg:col-span-5 order-2 lg:order-1">
+                            <div class="mb-[24px]">
+                                <span class="text-metadata text-qubit-red tracking-widest uppercase font-semibold">Community Platform</span>
+                            </div>
+                            <h3 class="text-[48px] font-bold mb-[16px] leading-tight">SportsDibs</h3>
+                            <p class="text-h-small text-white/90 mb-[24px]">Connect. Organize. Play.</p>
+                            <p class="text-body text-white/70 mb-[48px]">
+                                A comprehensive community sports platform designed for discovering local players, organizing pickup games, and bringing people together through sport.
+                            </p>
+                            <a id="qubit-link-sportsdibs" href="https://sportsdibs.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-[12px] text-white font-semibold hover:text-qubit-red transition-colors custom-focus-ring text-[18px] group">
+                                Visit SportsDibs.com <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                            </a>
+                        </div>
+                        <div class="lg:col-span-7 order-1 lg:order-2 relative">
+                            <div class="aspect-[4/3] rounded-[16px] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="People playing basketball outdoors" class="w-full h-full object-cover" decoding="async" loading="lazy">
+                            </div>
+                            <!-- Floating UI Element -->
+                            <div class="absolute -bottom-[24px] -left-[24px] bg-white text-charcoal p-[24px] rounded-[16px] shadow-2xl w-[320px] hidden md:block">
+                                <div class="flex items-center gap-[16px] mb-[16px]">
+                                    <div class="w-[48px] h-[48px] bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+                                        <iconify-icon icon="lucide:calendar-check" class="text-[24px]"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-[16px]">Pickup Basketball</div>
+                                        <div class="text-slate text-[14px]">Today, 6:00 PM • 12/14 Joined</div>
+                                    </div>
+                                </div>
+                                <div class="w-full h-[40px] bg-green-600 text-white rounded-[8px] flex items-center justify-center font-medium text-[14px]">
+                                    Join Game
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ReviewRooms -->
+                    <div class="grid lg:grid-cols-12 gap-[48px] lg:gap-[64px] items-center">
+                        <div class="lg:col-span-7 relative">
+                            <div class="aspect-[4/3] rounded-[16px] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Luxury hotel reception" class="w-full h-full object-cover" decoding="async" loading="lazy">
+                            </div>
+                            <!-- Floating UI Element -->
+                            <div class="absolute -bottom-[24px] -right-[24px] bg-white text-charcoal p-[24px] rounded-[16px] shadow-2xl w-[340px] hidden md:block">
+                                <div class="flex gap-[4px] mb-[16px]">
+                                    <iconify-icon icon="lucide:star" class="text-blue-500 text-[24px] fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="text-blue-500 text-[24px] fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="text-blue-500 text-[24px] fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="text-blue-500 text-[24px] fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star-half" class="text-blue-500 text-[24px] fill-current"></iconify-icon>
+                                </div>
+                                <div class="font-bold text-[18px] mb-[8px]">Private Feedback Received</div>
+                                <div class="text-slate text-[14px] leading-relaxed">
+                                    "The stay was wonderful, but the AC in room 402 was slightly loud."
+                                </div>
+                                <div class="mt-[16px] pt-[16px] border-t border-light-gray flex items-center gap-[12px]">
+                                    <div class="w-[8px] h-[8px] bg-blue-500 rounded-full"></div>
+                                    <span class="text-[14px] font-medium">Action Required: Maintenance</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5">
+                            <div class="mb-[24px]">
+                                <span class="text-metadata text-blue-400 tracking-widest uppercase font-semibold">Hospitality SaaS</span>
+                            </div>
+                            <h3 class="text-[48px] font-bold mb-[16px] leading-tight">ReviewRooms</h3>
+                            <p class="text-h-small text-white/90 mb-[24px]">Turn guest feedback into better stays.</p>
+                            <p class="text-body text-white/70 mb-[48px]">
+                                A specialized toolkit for hoteliers spanning checkout reports to guest outreach, facilitating private feedback collection and service recovery follow-up.
+                            </p>
+                            <a id="qubit-link-reviewrooms" href="https://reviewrooms.us/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-[12px] text-white font-semibold hover:text-blue-400 transition-colors custom-focus-ring text-[18px] group">
+                                Visit ReviewRooms.us <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- StaffOS360 -->
+                    <div class="grid lg:grid-cols-12 gap-[48px] lg:gap-[64px] items-center">
+                        <div class="lg:col-span-5 order-2 lg:order-1">
+                            <div class="mb-[24px]">
+                                <span class="text-metadata text-purple-400 tracking-widest uppercase font-semibold">Enterprise HR Tool</span>
+                            </div>
+                            <h3 class="text-[48px] font-bold mb-[16px] leading-tight">StaffOS360</h3>
+                            <p class="text-h-small text-white/90 mb-[24px]">Know where your application stands.</p>
+                            <p class="text-body text-white/70 mb-[48px]">
+                                Follow submissions, manage role-level resume views, streamline client/interviewer handoffs, record decisions and conduct final HR review securely.
+                            </p>
+                            <a id="qubit-link-staffos" href="https://www.staffos360.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-[12px] text-white font-semibold hover:text-purple-400 transition-colors custom-focus-ring text-[18px] group">
+                                Visit StaffOS360.com <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                            </a>
+                        </div>
+                        <div class="lg:col-span-7 order-1 lg:order-2 relative">
+                            <div class="aspect-[4/3] rounded-[16px] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Professionals in an interview setting" class="w-full h-full object-cover" decoding="async" loading="lazy">
+                            </div>
+                            <!-- Floating UI Element -->
+                            <div class="absolute -bottom-[24px] -left-[24px] bg-white text-charcoal p-[32px] rounded-[16px] shadow-2xl w-[320px] hidden md:block">
+                                <div class="font-bold text-[18px] mb-[24px] border-b border-light-gray pb-[16px]">Senior Developer Role</div>
+
+                                <div class="space-y-[20px] relative before:absolute before:inset-0 before:ml-[11px] before:h-full before:w-[2px] before:bg-light-gray">
+                                    <div class="relative flex items-center gap-[16px]">
+                                        <div class="w-[24px] h-[24px] rounded-full bg-purple-600 text-white flex items-center justify-center z-10 shrink-0">
+                                            <iconify-icon icon="lucide:check" class="text-[14px]"></iconify-icon>
+                                        </div>
+                                        <div class="text-[14px] font-medium">Submitted</div>
+                                    </div>
+                                    <div class="relative flex items-center gap-[16px]">
+                                        <div class="w-[24px] h-[24px] rounded-full bg-purple-600 text-white flex items-center justify-center z-10 shrink-0">
+                                            <iconify-icon icon="lucide:check" class="text-[14px]"></iconify-icon>
+                                        </div>
+                                        <div class="text-[14px] font-medium">Recruiter viewed</div>
+                                    </div>
+                                    <div class="relative flex items-center gap-[16px]">
+                                        <div class="w-[24px] h-[24px] rounded-full bg-purple-600 text-white flex items-center justify-center z-10 shrink-0">
+                                            <iconify-icon icon="lucide:check" class="text-[14px]"></iconify-icon>
+                                        </div>
+                                        <div class="text-[14px] font-medium">Forwarded to client</div>
+                                    </div>
+                                    <div class="relative flex items-center gap-[16px]">
+                                        <div class="w-[24px] h-[24px] rounded-full border-[2px] border-purple-600 bg-white z-10 shrink-0"></div>
+                                        <div class="text-[14px] font-medium text-slate">Interviewer approved</div>
+                                    </div>
+                                    <div class="relative flex items-center gap-[16px]">
+                                        <div class="w-[24px] h-[24px] rounded-full border-[2px] border-light-gray bg-white z-10 shrink-0"></div>
+                                        <div class="text-[14px] font-medium text-light-gray">HR reviewing</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What we are building next -->
+        <section class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-white">
+            <div class="max-w-content mx-auto">
+                <div class="mb-[80px] text-center max-w-[800px] mx-auto">
+                    <h2 class="text-h-section font-bold tracking-tight mb-[24px] text-charcoal">What we are building next</h2>
+                    <p class="text-[20px] text-slate leading-relaxed">A look at upcoming initiatives currently in active development. We build solutions that address real-world community needs.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-[48px] lg:gap-[64px]">
+                    <!-- Rydes -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[16/10] rounded-[16px] mb-[32px] overflow-hidden relative">
+                            <img src="https://images.pexels.com/photos/4005053/pexels-photo-4005053.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Friends sharing a car journey" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" decoding="async" loading="lazy">
+                            <div class="absolute inset-0 bg-charcoal/20"></div>
+                            <div class="absolute top-[24px] left-[24px]">
+                                <span class="inline-block px-[12px] py-[6px] bg-white/90 backdrop-blur-sm text-charcoal text-metadata uppercase tracking-widest font-bold rounded-[4px]">Upcoming</span>
+                            </div>
+                        </div>
+
+                        <div class="px-[16px]">
+                            <h3 class="text-[32px] font-bold mb-[16px] text-charcoal">Rydes</h3>
+                            <p class="text-body text-slate mb-[24px]">
+                                Your community. Your way there. A private community carpooling solution starting with workplace circles to make daily commutes more efficient and connected.
+                            </p>
+                            <a id="qubit-link-rydes" href="/rydes/" class="inline-flex items-center gap-[8px] text-qubit-red font-semibold hover:text-charcoal transition-colors text-[16px]">
+                                Explore upcoming project <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- WeCareVets -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[16/10] rounded-[16px] mb-[32px] overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1765996855368-fe01a1734ccb?auto=format&fit=crop&w=2000&q=85" alt="A veteran and family member at a recognition ceremony" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" decoding="async" loading="lazy">
+                            <div class="absolute inset-0 bg-charcoal/30"></div>
+                            <div class="absolute top-[24px] left-[24px]">
+                                <span class="inline-block px-[12px] py-[6px] bg-white/90 backdrop-blur-sm text-charcoal text-metadata uppercase tracking-widest font-bold rounded-[4px]">Upcoming</span>
+                            </div>
+                        </div>
+
+                        <div class="px-[16px]">
+                            <h3 class="text-[32px] font-bold mb-[16px] text-charcoal">WeCareVets</h3>
+                            <p class="text-body text-slate mb-[24px]">
+                                Serving those who served. Building what comes next. An initiative spanning career opportunities, resource navigation, and community support for veterans and their families.
+                            </p>
+                            <a id="qubit-link-wecarevets" href="/wecarevets/" class="inline-flex items-center gap-[8px] text-qubit-red font-semibold hover:text-charcoal transition-colors text-[16px]">
+                                Explore upcoming project <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section - Elevated Typography -->
+        <section id="process" class="py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-warm-white border-t border-light-gray">
+            <div class="max-w-content mx-auto">
+                <div class="mb-[96px] text-center">
+                    <h2 class="text-h-section font-bold tracking-tight text-charcoal">How we work</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-[48px] lg:gap-[48px]">
+                    <div class="relative group">
+                        <div class="hidden lg:block absolute top-[24px] left-[64px] right-[-24px] h-[2px] bg-light-gray group-hover:bg-qubit-red/30 transition-colors duration-500"></div>
+                        <div class="w-[48px] h-[48px] bg-white border-2 border-light-gray rounded-full flex items-center justify-center text-[18px] font-bold text-charcoal mb-[32px] relative z-10 group-hover:border-qubit-red group-hover:text-qubit-red transition-colors duration-500">
+                            1
+                        </div>
+                        <h3 class="text-[24px] font-bold mb-[16px] text-charcoal">Understand</h3>
+                        <p class="text-body text-slate">
+                            We listen to your business challenges, document requirements, and define clear objectives before any code is written or media produced.
                         </p>
                     </div>
 
-                    <div class="services-grid">
-                        <!-- AI Consultation -->
-                        <div class="service-category">
-                            <div class="service-header">
-                                <div class="service-title-container">
-                                    <div class="service-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
-                                            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
-                                        </svg>
-                                    </div>
-                                    <h3 class="service-title">AI Consultation</h3>
-                                </div>
-                            </div>
-                            <div class="service-cards">
-                                <div class="service-card">
-                                    <h4 class="card-title">Strategy & Planning</h4>
-                                    <p class="card-description">Develop a future-proof AI roadmap aligned with your business goals. Our expert-driven strategy ensures a seamless transition into AI-powered operations.</p>
-                                </div>
-                                <div class="service-card">
-                                    <h4 class="card-title">Selection & Development</h4>
-                                    <p class="card-description">We help you choose and build AI solutions that drive efficiency, reduce costs, and maximize ROI with precision.</p>
-                                </div>
-                                <div class="service-card">
-                                    <h4 class="card-title">Deployment & Training</h4>
-                                    <p class="card-description">From smooth integration to hands-on training, we empower your team to leverage AI effortlessly.</p>
-                                </div>
-                                <div class="service-card">
-                                    <h4 class="card-title">Optimization</h4>
-                                    <p class="card-description">AI is not a one-time setup! We continuously refine and optimize your AI solutions for peak performance.</p>
-                                </div>
-                            </div>
+                    <div class="relative group">
+                        <div class="hidden lg:block absolute top-[24px] left-[64px] right-[-24px] h-[2px] bg-light-gray group-hover:bg-qubit-red/30 transition-colors duration-500"></div>
+                        <div class="w-[48px] h-[48px] bg-white border-2 border-light-gray rounded-full flex items-center justify-center text-[18px] font-bold text-charcoal mb-[32px] relative z-10 group-hover:border-qubit-red group-hover:text-qubit-red transition-colors duration-500">
+                            2
                         </div>
+                        <h3 class="text-[24px] font-bold mb-[16px] text-charcoal">Shape</h3>
+                        <p class="text-body text-slate">
+                            We design the architecture, prototype the interfaces, and script the narratives, ensuring alignment on the proposed solution.
+                        </p>
+                    </div>
 
-                        <!-- Custom AI Chatbots -->
-                        <div class="service-category">
-                            <div class="service-header">
-                                <div class="service-title-container">
-                                    <div class="service-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                                        </svg>
-                                    </div>
-                                    <h3 class="service-title">Custom AI Chatbots</h3>
-                                </div>
-                            </div>
-                            <div class="service-cards">
-                                <div class="service-card">
-                                    <h4 class="card-title">Sales AI Chatbots</h4>
-                                    <p class="card-description">Convert leads into loyal customers with AI-powered chatbots that personalize interactions and drive sales 24/7.</p>
-                                </div>
-                                <div class="service-card">
-                                    <h4 class="card-title">CRM Chatbots</h4>
-                                    <p class="card-description">Enhance customer relationships by automating lead tracking, customer queries, and follow-ups with intelligent AI responses.</p>
-                                </div>
-                                <div class="service-card">
-                                    <h4 class="card-title">HR Chatbots</h4>
-                                    <p class="card-description">Automate hiring, onboarding, and employee support processes with intelligent HR chatbots.</p>
-                                </div>
-                            </div>
+                    <div class="relative group">
+                        <div class="hidden lg:block absolute top-[24px] left-[64px] right-[-24px] h-[2px] bg-light-gray group-hover:bg-qubit-red/30 transition-colors duration-500"></div>
+                        <div class="w-[48px] h-[48px] bg-white border-2 border-light-gray rounded-full flex items-center justify-center text-[18px] font-bold text-charcoal mb-[32px] relative z-10 group-hover:border-qubit-red group-hover:text-qubit-red transition-colors duration-500">
+                            3
                         </div>
+                        <h3 class="text-[24px] font-bold mb-[16px] text-charcoal">Build</h3>
+                        <p class="text-body text-slate">
+                            Our team develops the product, integrates the AI tools, or produces the creative content with rigorous quality control.
+                        </p>
+                    </div>
 
-                        <!-- Web Development -->
-                        <div class="service-category">
-                            <div class="service-header">
-                                <div class="service-title-container">
-                                    <div class="service-icon">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <polyline points="16 18 22 12 16 6"/>
-                                            <polyline points="8 6 2 12 8 18"/>
-                                        </svg>
-                                    </div>
-                                    <h3 class="service-title">Web Development</h3>
-                                </div>
-                            </div>
-                            <div class="service-cards">
-                                <div class="service-card">
-                                    <h4 class="card-title">Custom Web Applications</h4>
-                                    <p class="card-description">Build scalable, responsive web applications tailored to your business needs with modern technologies and AI integration.</p>
-                                </div>
-                                <div class="service-card">
-                                    <h4 class="card-title">E-commerce Solutions</h4>
-                                    <p class="card-description">Create powerful online stores with AI-powered recommendations, automated customer support, and seamless payment integration.</p>
-                                </div>
-                                <div class="service-card">
-                                    <h4 class="card-title">API Development & Integration</h4>
-                                    <p class="card-description">Develop robust APIs and integrate with existing systems to create seamless data flow and enhanced functionality.</p>
-                                </div>
-                            </div>
+                    <div class="relative group">
+                        <div class="w-[48px] h-[48px] bg-white border-2 border-light-gray rounded-full flex items-center justify-center text-[18px] font-bold text-charcoal mb-[32px] relative z-10 group-hover:border-qubit-red group-hover:text-qubit-red transition-colors duration-500">
+                            4
                         </div>
+                        <h3 class="text-[24px] font-bold mb-[16px] text-charcoal">Launch</h3>
+                        <p class="text-body text-slate">
+                            We deploy the solution, assist with training, and provide the handoff materials needed for your team to succeed.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact-section" id="contact">
-            <div class="container">
-                <div class="contact-header">
-                    <h2 class="contact-title">
-                        Get In <span class="gradient-text">Touch</span>
+        <!-- Contact & Footer -->
+        <footer id="contact" class="bg-charcoal text-white pt-[96px] lg:pt-[160px] pb-[48px] px-[20px] lg:px-[64px]">
+            <div class="max-w-content mx-auto">
+                <div class="max-w-[800px] mb-[120px]">
+                    <h2 class="text-[56px] lg:text-[84px] font-bold tracking-tight leading-[1.05] mb-[48px]">
+                        What are you ready to build?
                     </h2>
-                    <p class="contact-description">
-                        Ready to transform your business with AI? Let's discuss how we can help you scale, 
-                        automate, and grow with cutting-edge AI solutions.
-                    </p>
+                    <p class="mb-[32px] text-[20px] text-white/70">Tell us what you have in mind. We would love to hear about your project.</p>
+                    <a id="qubit-link-10" href="mailto:qubit.usa@gmail.com" class="inline-flex items-center justify-center min-h-[56px] px-[40px] bg-qubit-red text-white font-medium hover:bg-white hover:text-charcoal transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white rounded-[8px] text-[20px]">
+                        Discuss your project
+                    </a><p class="mt-[24px] text-white/80"><a id="contact-email" class="underline underline-offset-4" href="mailto:qubit.usa@gmail.com">qubit.usa@gmail.com</a><span class="mx-[16px]" aria-hidden="true">·</span><a id="contact-phone" class="underline underline-offset-4" href="tel:+17062941800">706-294-1800</a></p>
                 </div>
 
-                <div class="contact-grid">
-                    <!-- Contact Form -->
-                    <div class="form-container">
-                        <div class="form-card">
-                            <h3 class="form-title">Send us a message</h3>
-                            <form id="contactForm" class="contact-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="name" class="form-label">Name *</label>
-                                        <input type="text" id="name" name="name" required class="form-input">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email" class="form-label">Email *</label>
-                                        <input type="email" id="email" name="email" required class="form-input">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="company" class="form-label">Company</label>
-                                    <input type="text" id="company" name="company" class="form-input">
-                                </div>
-                                <div class="form-group">
-                                    <label for="message" class="form-label">Message *</label>
-                                    <textarea id="message" name="message" required rows="6" class="form-textarea" placeholder="Tell us about your project and how we can help..."></textarea>
-                                </div>
-                                <div class="form-submit">
-                                    <button type="button" id="sendButton" class="send-button">
-                                        Send Message
-                                        <svg class="send-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="m22 2-7 20-4-9-9-4Z"/>
-                                            <path d="M22 2 11 13"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </form>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-[64px] pt-[64px] border-t border-white/10">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white inline-block p-[20px] rounded-[8px] mb-[32px]">
+                            <img src="/assets/brand/qubit-logo.jpg" alt="Qubit Logo" class="w-[145px] h-auto object-contain" decoding="async" loading="eager">
                         </div>
+                        <p class="text-white/60 text-[18px] max-w-[300px] leading-relaxed">
+                            Digital Products. Practical AI. Creative Content.
+                        </p>
                     </div>
 
-                    <!-- Contact Info -->
-                    <div class="info-container">
-                        <div class="info-header">
-                            <h3 class="info-title">Contact Information</h3>
-                            <p class="info-description">
-                                We're here to help and answer any question you might have. 
-                                We look forward to hearing from you.
-                            </p>
-                        </div>
-
-                        <div class="contact-cards">
-                            <!-- Email Card -->
-                            <div class="contact-card">
-                                <div class="card-icon">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect width="20" height="16" x="2" y="4" rx="2"/>
-                                        <path d="m22 7-10 5L2 7"/>
-                                    </svg>
-                                </div>
-                                <div class="card-content">
-                                    <h4 class="card-title">Email</h4>
-                                    <p class="card-details">qubit.usa@gmail.com</p>
-                                </div>
-                            </div>
-
-                            <!-- Phone Card -->
-                            <div class="contact-card">
-                                <div class="card-icon">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                    </svg>
-                                </div>
-                                <div class="card-content">
-                                    <h4 class="card-title">Phone</h4>
-                                    <p class="card-details">706-294-1800</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-[32px] tracking-wide text-[18px]">Services</h4>
+                        <ul class="space-y-[20px]">
+                            <li><a id="qubit-link-11" href="#services" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">App development</a></li>
+                            <li><a id="qubit-link-12" href="#services" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">Website design</a></li>
+                            <li><a id="qubit-link-13" href="#services" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">AI consulting</a></li>
+                            <li><a id="qubit-link-14" href="#services" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">Video production</a></li>
+                        </ul>
                     </div>
+
+                    <div>
+                        <h4 class="text-white font-bold mb-[32px] tracking-wide text-[18px]">Products</h4>
+                        <ul class="space-y-[20px]">
+                            <li><a id="qubit-link-15" href="https://sportsdibs.com/" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">SportsDibs</a></li>
+                            <li><a id="qubit-link-16" href="https://reviewrooms.us/" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">ReviewRooms</a></li>
+                            <li><a id="qubit-link-17" href="https://www.staffos360.com/" class="text-white/60 hover:text-white transition-colors custom-focus-ring text-[16px]">StaffOS360</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-[96px] pt-[48px] border-t border-white/10 text-white/50 text-[14px] flex flex-col md:flex-row justify-between items-center gap-[24px]">
+                    <p>© 2026 Qubit. All rights reserved.</p>
+                    <p>Designed for small and midsize businesses.</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </footer>
 
-    <script type="module" src="script.js"></script>
-</body>
-</html>
+    </div>
+
+</body></html>
