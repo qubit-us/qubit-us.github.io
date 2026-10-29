@@ -9,7 +9,7 @@
 .rydes-symbol-crop img {width:180px;height:60px;max-width:none;transform:translate(-14px,-8px);}
 .ai-process {scroll-margin-top:80px;}
 .process-intro {max-width:760px;margin:0 auto 64px;text-align:center;}
-.process-eyebrow {display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;padding:8px 14px;border:1px solid #c9000025;border-radius:100px;color:#c90000;font-size:12px;font-weight:600;letter-spacing:.03em;}
+.process-eyebrow {display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;padding:8px 14px;border:1px solid #c90000;border-radius:100px;background:#c90000;color:#fff;font-size:12px;font-weight:600;letter-spacing:.03em;}
 .process-eyebrow iconify-icon {font-size:16px;}
 .process-intro>p {max-width:600px;margin:24px auto 0;color:#596170;font-size:18px;line-height:1.7;}
 .process-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0;}
