@@ -10,7 +10,10 @@ for(const file of ['index.html','rydes/index.html','wecarevets/index.html']){
  const css=fs.readFileSync(path.join(root,stylesheet[1]),'utf8');
  const cssHash=crypto.createHash('sha256').update(css).digest('hex').slice(0,12);
  if(stylesheet[2]!==cssHash)throw Error(file+': stylesheet hash does not match its contents');
- if(file==='index.html'&&(!css.includes('.process-grid{display:grid')||!css.includes('.process-art{')||!css.includes('.product-title{')))throw Error('Homepage process illustrations or logo layout styles are missing');
+ if(file==='index.html'){
+  if(!css.includes('.process-grid{display:grid')||!css.includes('.process-photo{')||!css.includes('.product-title{'))throw Error('Homepage photographic process or logo layout styles are missing');
+  if((html.match(/src="\/assets\/process\/[^\"]+\.jpg"/g)||[]).length!==4)throw Error('All four process steps must have real photographic assets');
+ }
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  if(ids.length!==new Set(ids).size)throw Error(file+': duplicate element ids');
  if(/127\.0\.0\.1|localhost|p\.superdesign\.dev|cdn\.tailwindcss\.com|hmac-uploads/.test(html))throw Error(file+': preview dependency remains');

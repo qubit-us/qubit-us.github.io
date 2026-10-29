@@ -9,5 +9,31 @@
     "source": "https://unsplash.com/photos/couple-wearing-veteran-hats-and-patches-TC5xalMS4zU",
     "credit": "U.S. Navy / Navy Medicine / Unsplash"
   },
-  "note": "Stock photography is illustrative and does not depict Qubit customers or WeCareVets participants."
+  "note": "Stock photography is illustrative and does not depict Qubit customers or WeCareVets participants.",
+  "process": [
+    {
+      "name": "discover",
+      "url": "https://images.pexels.com/photos/5256993/pexels-photo-5256993.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "source": "https://www.pexels.com/photo/businessmen-writing-and-discussing-5256993/",
+      "credit": "Thirdman / Pexels"
+    },
+    {
+      "name": "prototype",
+      "url": "https://images.pexels.com/photos/9317525/pexels-photo-9317525.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "source": "https://www.pexels.com/photo/laptop-with-video-editing-software-9317525/",
+      "credit": "Adam Sondel / Pexels"
+    },
+    {
+      "name": "refine",
+      "url": "https://images.pexels.com/photos/39219944/pexels-photo-39219944/free-photo-of-diverse-team-analyzing-data-on-laptop-in-modern-office.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "source": "https://www.pexels.com/photo/diverse-team-analyzing-data-on-laptop-in-modern-office-39219944/",
+      "credit": "Vitaly Gariev / Pexels"
+    },
+    {
+      "name": "launch",
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85",
+      "source": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      "credit": "Unsplash"
+    }
+  ]
 }

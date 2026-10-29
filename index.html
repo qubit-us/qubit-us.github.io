@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize',()=>{if(innerWidth>=768){panel.classList.add('hidden');button.setAttribute('aria-expanded','false');}});
   }
 });
-</script><link rel="stylesheet" href="/assets/css/home.4ccbcec9ce1b.css"><link rel="icon" type="image/jpeg" href="/assets/brand/qubit-symbol.jpg"><link rel="canonical" href="https://qubit-us.com/"></head>
+</script><link rel="stylesheet" href="/assets/css/home.22cc3b38aeb2.css"><link rel="icon" type="image/jpeg" href="/assets/brand/qubit-symbol.jpg"><link rel="canonical" href="https://qubit-us.com/"></head>
 <body>
     <div class="min-h-screen bg-warm-white text-charcoal font-sans selection:bg-qubit-red selection:text-white">
 
@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </section>
 
-        <!-- AI-led process: decorative illustrations support the ordered steps. -->
+        <!-- AI-led process with photographic cards. -->
         <section id="process" class="ai-process py-[96px] lg:py-[144px] px-[20px] lg:px-[64px] bg-warm-white border-t border-light-gray" aria-labelledby="process-title">
             <div class="max-w-content mx-auto">
                 <div class="process-intro">
@@ -398,45 +398,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <ol class="process-grid" aria-label="Our four-step AI process">
                     <li class="process-card">
-                        <div class="process-card-top"><span class="process-number">01</span><span class="process-phase">Find the opportunity</span></div>
-                        <div class="process-art process-art--discover" aria-hidden="true">
-                            <div class="process-paper"><span class="mock-title"><iconify-icon icon="lucide:file-text"></iconify-icon> Your business brief</span><span class="mock-line"></span><span class="mock-line mock-line--short"></span><div class="mock-tags"><span>Goals</span><span>Audience</span></div></div>
-                            <div class="process-result"><iconify-icon icon="lucide:scan-search"></iconify-icon><span>AI opportunity identified</span></div>
+                        <div class="process-photo process-photo--discover">
+                            <img src="/assets/process/discover.jpg" alt="Business discovery and planning around a shared table" width="1400" height="933" loading="lazy" decoding="async">
+                            <div class="process-photo-shade" aria-hidden="true"></div>
+                            <div class="process-card-top"><span class="process-number">01</span><span class="process-phase">Find the opportunity</span></div>
                         </div>
-                        <h3>Discover &amp; Define</h3>
-                        <p>We clarify your goals, audience, and challenges, then identify where AI can make a practical difference.</p>
-                        <span class="process-outcome">A clear direction</span>
+                        <div class="process-card-copy">
+                            <h3>Discover &amp; Define</h3>
+                            <p>We clarify your goals, audience, and challenges, then identify where AI can make a practical difference.</p>
+                            <div class="process-outcome"><span>A clear direction</span><iconify-icon icon="lucide:arrow-up-right" aria-hidden="true"></iconify-icon></div>
+                        </div>
                     </li>
                     <li class="process-card">
-                        <div class="process-card-top"><span class="process-number">02</span><span class="process-phase">Make it tangible</span></div>
-                        <div class="process-art process-art--prototype" aria-hidden="true">
-                            <div class="mock-prompt"><iconify-icon icon="lucide:sparkles"></iconify-icon><span>Turn the idea into a first draft</span></div>
-                            <div class="prototype-panels"><div class="prototype-panel"><span class="prototype-image"></span><span class="mock-line"></span><span class="mock-line mock-line--short"></span></div><div class="prototype-panel prototype-panel--second"><span class="prototype-play"><iconify-icon icon="lucide:play"></iconify-icon></span><span class="mock-line"></span><span class="mock-line mock-line--short"></span></div></div>
+                        <div class="process-photo process-photo--prototype">
+                            <img src="/assets/process/prototype.jpg" alt="A digital creative workstation with video editing software" width="1400" height="933" loading="lazy" decoding="async">
+                            <div class="process-photo-shade" aria-hidden="true"></div>
+                            <div class="process-card-top"><span class="process-number">02</span><span class="process-phase">Make it tangible</span></div>
                         </div>
-                        <h3>Prototype with AI</h3>
-                        <p>We use AI to create an app prototype, workflow, storyboard, or visual concept you can see and react to.</p>
-                        <span class="process-outcome">A first version to explore</span>
+                        <div class="process-card-copy">
+                            <h3>Prototype with AI</h3>
+                            <p>We use AI to create an app prototype, workflow, storyboard, or visual concept you can see and react to.</p>
+                            <div class="process-outcome"><span>A first version to explore</span><iconify-icon icon="lucide:arrow-up-right" aria-hidden="true"></iconify-icon></div>
+                        </div>
                     </li>
                     <li class="process-card">
-                        <div class="process-card-top"><span class="process-number">03</span><span class="process-phase">Shape it together</span></div>
-                        <div class="process-art process-art--refine" aria-hidden="true">
-                            <div class="revision-row"><span class="revision-version">v1</span><span>AI-created draft</span><iconify-icon icon="lucide:layers"></iconify-icon></div>
-                            <div class="revision-feedback"><iconify-icon icon="lucide:message-square-text"></iconify-icon> Your feedback + our review</div>
-                            <div class="revision-row revision-row--approved"><span class="revision-version">v2</span><span>Refined and reviewed</span><iconify-icon icon="lucide:check-check"></iconify-icon></div>
+                        <div class="process-photo process-photo--refine">
+                            <img src="/assets/process/refine.jpg" alt="Two colleagues reviewing work together on a laptop" width="1400" height="933" loading="lazy" decoding="async">
+                            <div class="process-photo-shade" aria-hidden="true"></div>
+                            <div class="process-card-top"><span class="process-number">03</span><span class="process-phase">Shape it together</span></div>
                         </div>
-                        <h3>Create &amp; Refine</h3>
-                        <p>We build and generate with AI, then review the details and improve the work with your feedback.</p>
-                        <span class="process-outcome">Work ready for the real world</span>
+                        <div class="process-card-copy">
+                            <h3>Create &amp; Refine</h3>
+                            <p>We build and generate with AI, then review the details and improve the work with your feedback.</p>
+                            <div class="process-outcome"><span>Work ready for the real world</span><iconify-icon icon="lucide:arrow-up-right" aria-hidden="true"></iconify-icon></div>
+                        </div>
                     </li>
                     <li class="process-card">
-                        <div class="process-card-top"><span class="process-number">04</span><span class="process-phase">Put it to work</span></div>
-                        <div class="process-art process-art--launch" aria-hidden="true">
-                            <div class="launch-window"><div class="launch-window-top"><span></span><span></span><span></span></div><div class="launch-center"><iconify-icon icon="lucide:rocket"></iconify-icon><span>Ready to launch</span></div></div>
-                            <div class="improvement-loop"><iconify-icon icon="lucide:refresh-cw"></iconify-icon><span>Launch · Learn · Improve</span></div>
+                        <div class="process-photo process-photo--launch">
+                            <img src="/assets/process/launch.jpg" alt="A monitor displaying website performance analytics" width="1400" height="933" loading="lazy" decoding="async">
+                            <div class="process-photo-shade" aria-hidden="true"></div>
+                            <div class="process-card-top"><span class="process-number">04</span><span class="process-phase">Put it to work</span></div>
                         </div>
-                        <h3>Launch &amp; Improve</h3>
-                        <p>We launch the finished work, help you put it to use, and refine it as we learn from results and your needs evolve.</p>
-                        <span class="process-outcome">A launch with a path forward</span>
+                        <div class="process-card-copy">
+                            <h3>Launch &amp; Improve</h3>
+                            <p>We launch the finished work, help you put it to use, and refine it as we learn from results and your needs evolve.</p>
+                            <div class="process-outcome"><span>A launch with a path forward</span><iconify-icon icon="lucide:arrow-up-right" aria-hidden="true"></iconify-icon></div>
+                        </div>
                     </li>
                 </ol>
                 <p class="process-footnote"><iconify-icon icon="lucide:messages-square" aria-hidden="true"></iconify-icon> Your feedback shapes every step.</p>
