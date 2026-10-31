@@ -17,3 +17,4 @@ for(const name of ['home','rydes','wecarevets']){
  fs.writeFileSync(page,html.replace(stylesheet,'href="'+asset+'"'));
  console.log(name+': '+asset);
 }
+require('./build-formfidence.cjs');

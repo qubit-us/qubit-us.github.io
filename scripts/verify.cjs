@@ -32,3 +32,4 @@ if(fs.readFileSync(path.join(root,'CNAME'),'utf8').trim()!=='qubit-us.com')throw
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
 for(const href of ['/rydes/','/wecarevets/','https://sportsdibs.com/','mailto:qubit.usa@gmail.com'])if(!home.includes('href="'+href+'"'))throw Error('Missing required link '+href);
 console.log('Custom domain, required product routes and contact links verified');
+require('./verify-formfidence.cjs');
