@@ -35,5 +35,11 @@
       "source": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
       "credit": "Unsplash"
     }
-  ]
+  ],
+  "formfidence": {
+    "asset": "/assets/formfidence/family-paperwork.webp",
+    "credit": "AI-generated illustration created for Qubit using the built-in image-generation tool",
+    "description": "Fictional people reviewing paperwork at a home table. Not customers, applicants or a testimonial.",
+    "prompt": "Warm authentic editorial photograph of an adult woman and older man reviewing indistinct paperwork together at home. Navy folder and muted teal notebook, soft daylight, central faces and hands, 16:10 crop. No text, readable personal details, logos or government symbols."
+  }
 }
